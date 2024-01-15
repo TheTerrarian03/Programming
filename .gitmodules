@@ -10,3 +10,12 @@
 [submodule "RustProj/SummationSolver"]
 	path = RustProj/SummationSolver
 	url = https://github.com/TheTerrarian03/SummationSolver.git
+[submodule "Robotics/Swerve2024Proto"]
+	path = Robotics/Swerve2024Proto
+	url = https://github.com/FIRST4513/Swerve2024Proto.git
+[submodule "Robotics/Robot2023SwerveVer03"]
+	path = Robotics/Robot2023SwerveVer03
+	url = https://github.com/FIRST4513/Robot2023SwerveVer03.git
+[submodule "Robotics/SpectrumTraining"]
+	path = Robotics/SpectrumTraining
+	url = https://github.com/Spectrum3847/SpectrumTraining.git
