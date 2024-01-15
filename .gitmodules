@@ -1,3 +1,6 @@
 [submodule "AP-Comp-Codes/AP_Comp_Encoder"]
 	path = AP-Comp-Codes/AP_Comp_Encoder
 	url = https://github.com/TheTerrarian03/AP_Comp_Encoder.git
+[submodule "MinecraftProfileManager"]
+	path = MinecraftProfileManager
+	url = https://github.com/TheTerrarian03/MinecraftProfileManager.git
