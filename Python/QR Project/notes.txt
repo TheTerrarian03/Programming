@@ -1,0 +1,18 @@
+8x8 position marker
+5x5 alignment structure
+timing structure, aligns with edge of outer positioning squares
+ERR CORR: [01, low, 7%], [00, medium, 15%], [10, high, 30%], [11, quartile, 25%]
+MASKS:
+    111, j % 3 = 0
+    100, i % 2 = 0
+    001, (i/2 + j/3) % 2 = 0
+    110, (i+k) % 3 = 0
+    011, ((i*j) % 3 + i*j) % 2 = 0
+    000, (i*j) % 2 + (i*j) % 3 = 0
+    101, (i+j) % 2 = 0
+    010, ((i*j) % 3 + i + j) % 2 = 0
+ENCODING TYPE:
+    1000: numeric
+    0100: alphanumeric
+    0001: kanji
+    0010: bytes

@@ -1,0 +1,14 @@
+ACCOUNTS:
+Followed: 56
+Suggested: 23
+Ads: 21
+
+GENRES:
+games: 16
+humor: 36
+ranting: 1
+query: 2
+people: 1
+help: 4
+tech: 14
+showcase: 5
