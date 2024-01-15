@@ -7,3 +7,6 @@
 [submodule "SummationSolver"]
 	path = RustProj/SummationSolver
 	url = https://github.com/TheTerrarian03/SummationSolver.git
+[submodule "RustProj/SummationSolver"]
+	path = RustProj/SummationSolver
+	url = https://github.com/TheTerrarian03/SummationSolver.git
