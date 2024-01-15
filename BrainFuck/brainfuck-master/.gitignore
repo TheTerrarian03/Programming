@@ -1,0 +1,5 @@
+dist/
+brainfuck_swimmy4days.egg-info/
+build/
+archive/
+__pycache__/
