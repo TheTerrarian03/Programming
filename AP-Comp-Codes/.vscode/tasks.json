@@ -1,0 +1,15 @@
+{
+    // task copied from https://www.youtube.com/watch?v=ccTcTcbWwdw
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/${relativeFileDirname}/"
+    },
+    "tasks": [
+        {
+            "label": "clang++ build and run CURRENT OPEN FILE",
+            "type": "shell",
+            "command": "clang++ -std=c++11 ${fileBasename} -o ${fileBasenameNoExtension}; ./${fileBasenameNoExtension}",
+            "problemMatcher": []
+        }
+    ],
+}
