@@ -1,0 +1,13 @@
+Disp "Increment:"
+Input P
+
+int xMin→L
+L→I
+int xMax→H
+
+While I≤H
+eval I→A
+if A(1)==0
+Disp I
+I+P→I
+End
