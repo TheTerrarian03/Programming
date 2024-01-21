@@ -19,3 +19,6 @@
 [submodule "Robotics/SpectrumTraining"]
 	path = Robotics/SpectrumTraining
 	url = https://github.com/Spectrum3847/SpectrumTraining.git
+[submodule "Robotics/Kachow2024Ver01"]
+	path = Robotics/Kachow2024Ver01
+	url = https://github.com/FIRST4513/Kachow2024Ver01.git
