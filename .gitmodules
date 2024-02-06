@@ -16,9 +16,16 @@
 [submodule "Robotics/Robot2023SwerveVer03"]
 	path = Robotics/Robot2023SwerveVer03
 	url = https://github.com/FIRST4513/Robot2023SwerveVer03.git
-[submodule "Robotics/SpectrumTraining"]
-	path = Robotics/SpectrumTraining
-	url = https://github.com/Spectrum3847/SpectrumTraining.git
 [submodule "Robotics/Kachow2024Ver01"]
 	path = Robotics/Kachow2024Ver01
 	url = https://github.com/FIRST4513/Kachow2024Ver01.git
+[submodule "Robotics/Kachow2024Ver02"]
+	path = Robotics/Kachow2024Ver02
+	url = https://github.com/FIRST4513/Kachow2024Ver02.git
+	branch = main
+[submodule "Robotics/Kachow2024Ver03"]
+	path = Robotics/Kachow2024Ver03
+	url = https://github.com/FIRST4513/Kachow2024Ver03.git
+[submodule "Robotics/Kachow2024Ver04"]
+	path = Robotics/Kachow2024Ver04
+	url = https://github.com/FIRST4513/Kachow2024Ver04.git
