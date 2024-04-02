@@ -1,5 +1,5 @@
-use std::io::{self, Write};
 use core::time;
+use std::io::{self, Write};
 use std::thread;
 
 fn main() {
@@ -7,8 +7,8 @@ fn main() {
 
     const MAX: i32 = 100;
 
-    for i in 0..MAX+1 {
-        print!("\r{} - {}%\n", make_progressbar(i, MAX, 17), (i/MAX));
+    for i in 0..MAX + 1 {
+        print!("\r{} - {}%\n", make_progressbar(i, MAX, 17), (i / MAX));
         // io::stdout().flush().unwrap(); // Flush the output buffer
         // thread::sleep(time::Duration::from_millis(50));
     }
@@ -21,12 +21,15 @@ fn make_progressbar(current_count: i32, max_count: i32, length: i32) -> String {
     let filled: i32 = (percent_filled * length as f32) as i32;
     let empty: i32 = length - filled;
 
-    println!("c: {}, m: {}, p: {}, f: {}, e: {}", current_count, max_count, percent_filled, filled, empty);
+    println!(
+        "c: {}, m: {}, p: {}, f: {}, e: {}",
+        current_count, max_count, percent_filled, filled, empty
+    );
 
     let mut progress_string = String::new();
 
     progress_string.push_str("[");
-    
+
     for _ in 0..filled {
         progress_string.push_str("=");
     }
@@ -47,7 +50,7 @@ fn make_progressbar(current_count: i32, max_count: i32, length: i32) -> String {
 //     let mut progress_string = String::new();
 
 //     progress_string.push_str("[");
-    
+
 //     for _ in 0..filled {
 //         progress_string.push_str("=");
 //     }

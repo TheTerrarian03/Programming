@@ -29,3 +29,9 @@
 [submodule "Robotics/Kachow2024Ver04"]
 	path = Robotics/Kachow2024Ver04
 	url = https://github.com/FIRST4513/Kachow2024Ver04.git
+[submodule "Robotics/Spectrum2024"]
+	path = Robotics/Spectrum2024
+	url = https://github.com/Spectrum3847/2024-Ultraviolet.git
+[submodule "Robotics/Spectrum_Ultraviolet_2024"]
+	path = Robotics/Spectrum_Ultraviolet_2024
+	url = https://github.com/Spectrum3847/2024-Ultraviolet.git
