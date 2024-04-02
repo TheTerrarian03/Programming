@@ -38,3 +38,6 @@
 [submodule "Robotics/Kachow2024Ver05"]
 	path = Robotics/Kachow2024Ver05
 	url = https://github.com/FIRST4513/Kachow2024Ver05.git
+[submodule "PhysicsMotorProject"]
+	path = PhysicsMotorProject
+	url = https://github.com/TheTerrarian03/PhysicsMotorProject.git
