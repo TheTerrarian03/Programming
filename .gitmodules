@@ -41,3 +41,9 @@
 [submodule "PhysicsMotorProject"]
 	path = PhysicsMotorProject
 	url = https://github.com/TheTerrarian03/PhysicsMotorProject.git
+[submodule "CodePurple"]
+	path = CodePurple
+	url = https://github.com/TheTerrarian03/CodePurple.git
+[submodule "Robotics/CircuitLib"]
+	path = Robotics/CircuitLib
+	url = https://github.com/FIRST4513/CircuitLib.git
