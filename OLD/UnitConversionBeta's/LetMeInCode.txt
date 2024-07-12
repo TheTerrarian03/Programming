@@ -1,0 +1,5 @@
+"norton-friendly" (without inverted commas)
+
+why?
+
+because norton auto-protect doesn't like having unsigned programs on your computer, so having them LetMeInCoded pretty much solves that issue.

@@ -1,0 +1,24 @@
+processor template:
+	def option999(b1, b2, b3):
+		b = "".join(b1)
+		ca = "".join(b2)
+		try:
+			c = float(ca)
+		except ValueError:
+			return "error"
+		d = "".join(b3)
+		
+		# [if statements here]
+
+		answer = False
+
+		if not answer:
+			return "error"
+
+		return answer
+		
+to do:
+	fix controls screen
+
+temperature converter
+LCM

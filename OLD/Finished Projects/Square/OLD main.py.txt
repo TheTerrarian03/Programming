@@ -1,0 +1,94 @@
+import pygame
+import levels
+import colors
+
+# pygame
+pygame.init()
+game = pygame.display.set_mode((320, 180))
+pygame.display.set_caption("Square - Opening Menu")
+
+# variables
+menu = "opening"  # or could be "res" or "sizing" or "level"
+resButton = None  # 1 = 800x450, 2 = 7080x720, 3 = 1600x900 (resolution (pixels))
+blockSizeButton = None  # 1 = 50x50, 2 = 100x100, 3 = 150x150 (block size (pixels))
+
+# pictures
+# opening
+openPNG = pygame.image.load("mainOpen.png")
+
+resPNG = pygame.image.load("mainRes.png")
+
+sizePNG = pygame.image.load("mainSize.png")
+
+running = True
+while running:
+    if menu == "opening":
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if 100 <= event.pos[0] <= 220 and 85 <= event.pos[1] <= 160:
+                    menu = "res"
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+
+        game.fill(colors.colors["white"])
+        game.blit(openPNG, (0, 0))
+
+        pygame.display.update()
+    elif menu == "res":
+        pygame.display.set_mode((320, 345))
+        pygame.display.set_caption("Square - Resolution")
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if 22 <= event.pos[0] <= 297 and 80 <= event.pos[1] <= 155:
+                    resButton = 1
+                    menu = "sizing"
+                if 22 <= event.pos[0] <= 297 and 165 <= event.pos[1] <= 240:
+                    resButton = 2
+                    menu = "sizing"
+                if 22 <= event.pos[0] <= 297 and 250 <= event.pos[1] <= 325:
+                    resButton = 3
+                    menu = "sizing"
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+
+        game.fill(colors.colors["white"])
+        game.blit(resPNG, (0, 0))
+
+        pygame.display.update()
+    elif menu == "sizing":
+        pygame.display.set_mode((320, 180))
+        pygame.display.set_caption("Square - Block Sizing")
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if 45 <= event.pos[0] <= 100 and 80 <= event.pos[1] <= 155:
+                    blockSizeButton = 1
+                    menu = "level"
+                if 120 <= event.pos[0] <= 195 and 80 <= event.pos[1] <= 155:
+                    blockSizeButton = 2
+                    menu = "level"
+                if 205 <= event.pos[0] <= 280 and 80 <= event.pos[1] <= 155:
+                    blockSizeButton = 3
+                    menu = "level"
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+
+        game.fill(colors.colors["white"])
+        game.blit(sizePNG, (0, 0))
+
+        pygame.display.update()
+    elif menu == "level":
+        running = False
+
+levels.main(resButton, blockSizeButton)
+
+pygame.quit()
+quit()

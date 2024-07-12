@@ -1,0 +1,38 @@
+main.py:
+	Opening Menu:
+		mainOpen.png: 320x180 pixels
+		Button 1: 120x75 pixels, topXY: 100, 85
+
+	Resolution ("Res.") Menu:
+		mainRes.png: 320x345 pixels
+		Button 1: 275x75 pixels, topXY: 22, 80
+		Button 2: 275x75 pixels, topXY: 22, 165
+		Button 3: 275x75 pixels, topXY: 22, 250
+
+	Block Size Menu:
+		mainSize.png: 320x180 pixels
+		Button 1: 55x75 pixels, topXY: 45, 80
+		Button 2: 75x75 pixels, topXY: 120, 80
+		Button 3: 75x75 pixels, topXY: 205, 80
+
+	Actual Game:
+		Resolutions: 800x450, 1080x720, 1600x900 (16:9 ratios)
+		Floor PNG's:
+			Beginning: "floorBeg" (100x100)
+			Middles:   "floorMid" (100x100)
+			End:       "floorEnd" (100x100)
+		Square Character: "square.png" (50x50) (going to be scaled)
+		Square scaling (pixels): 50x50, 100x100, or 150x150
+
+event loop template:
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_ESCAPE:
+				running = False
+		if event.type == pygame.KEYUP:
+			pass
+
+colors.py:
+	colors.colors[]

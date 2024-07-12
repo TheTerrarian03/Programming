@@ -1,0 +1,12 @@
+display = None
+clock = None
+fps = None
+tiles = None
+dispWid = None
+dispHi = None
+grid = None
+images = None
+selCol = None
+scale = None  # also used in reference to tile width, for art
+sysRun = True
+paused = False

@@ -1,0 +1,138 @@
+import pygame
+from tkinter import *
+
+
+# variables
+resX = 1600
+resY = 900
+sq = pygame.image.load("red100x100.png")
+square = pygame.transform.scale(sq, (100, 100))
+floor = pygame.image.load("floor3328x100.png")
+floorTopY = resY - 100
+maxSpeed = 30
+acceleration = 2
+gravity = 1.5
+clock = pygame.time.Clock()
+fps = 30
+
+up_down = False
+down_down = False
+a_down = False
+d_down = False
+squareX = 50
+squareY = floorTopY - 100
+sideSpeed = 0
+verticalSpeed = 0
+
+# colors
+colors = {
+        "black": (0, 0, 0),
+        "white": (255, 255, 255),
+        "red": (255, 0, 0),
+        "green": (0, 150, 0),
+        "blue": (0, 0, 255),
+        "purple": (128, 0, 128),
+        "blueLight": (0, 153, 255),
+}
+
+# some logic
+if resY < 200 or resX < 400:
+    error = Tk()
+    error.title("ERROR")
+
+    def endError():
+        error.destroy()
+        quit()
+
+    info1 = Label(error, text="AN ERROR OCCURRED:")
+    info2 = Label(error, text="\nTHE MINIMUM RESOLUTION IS 400x200!")
+    info3 = Label(error, text="YOURS WAS " + str(resX) + "x" + str(resY) + "!\n")
+    endButt = Button(error, text="Goodbye.", command=endError)
+
+    info1.grid()
+    info2.grid(row=1)
+    info3.grid(row=2)
+    endButt.grid(row=3)
+
+    error.mainloop()
+
+# pygame init
+pygame.init()
+game = pygame.display.set_mode((resX, resY))
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w or event.key == pygame.K_UP:
+                up_down = True
+            if event.key == pygame.K_SPACE:
+                up_down = True
+            if event.key == pygame.K_s or event.key == pygame.K_DOWN:
+                down_down = True
+            if event.key == pygame.K_a or event.key == pygame.K_LEFT:
+                a_down = True
+            if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
+                d_down = True
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                quit()
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_w or event.key == pygame.K_UP:
+                up_down = False
+            if event.key == pygame.K_SPACE:
+                up_down = False
+            if event.key == pygame.K_s or event.key == pygame.K_DOWN:
+                down_down = False
+            if event.key == pygame.K_a or event.key == pygame.K_LEFT:
+                a_down = False
+            if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
+                d_down = False
+
+    if a_down:
+        sideSpeed -= acceleration
+    if d_down:
+        sideSpeed += acceleration
+    if not a_down and sideSpeed < 0:
+        sideSpeed += acceleration / 4
+    if not d_down and sideSpeed > 0:
+        sideSpeed -= acceleration / 4
+
+    if sideSpeed > maxSpeed:
+        sideSpeed = maxSpeed
+    if sideSpeed < -maxSpeed:
+        sideSpeed = -maxSpeed
+
+    if up_down:
+        verticalSpeed = maxSpeed
+    if down_down:
+        verticalSpeed -= acceleration * 5
+
+    if squareY < floorTopY - 100:
+        verticalSpeed -= gravity
+
+    squareX += sideSpeed
+    squareY -= verticalSpeed
+
+    if squareX <= 0:
+        sideSpeed = -sideSpeed
+        squareX = 0
+    if squareX + 100 >= resX:
+        sideSpeed = -sideSpeed
+        squareX = resX - 100
+    if squareY <= 0:
+        verticalSpeed = -verticalSpeed / 2
+        squareY = 0
+    if squareY >= floorTopY - 95 and not up_down:
+        verticalSpeed = 0
+        squareY = floorTopY - 100
+
+    game.fill(colors["blueLight"])
+    game.blit(floor, [0, floorTopY])
+    game.blit(square, [squareX, squareY])
+
+    pygame.display.update()
+
+    clock.tick(fps)

@@ -1,0 +1,17 @@
+    def drawChars(start, toPrint):
+        chars = pygame.image.load("chars.png")
+        charList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "a", "b", "c", "d", "e", "f", "g", "h", 'i',
+                    "j", "k", "l", "m", "n", "o", "p", "q", "r", 's', "t", "u", "v", "w", "x", "y", "z", "-"]
+
+        x = start[0]
+        y = start[1]
+
+        for char in toPrint:
+            for i in range(38):
+                try:
+                    if char == charList[i]:
+                        ds.blit(chars, (x, y), ((i * 15), 0, 15, 21))
+                        break
+                except IndexError:
+                    break
+            x += 18

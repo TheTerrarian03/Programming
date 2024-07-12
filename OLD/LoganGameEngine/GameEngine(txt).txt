@@ -1,0 +1,44 @@
+Main Game Engine components would be:
+1. Array of "Pixels"
+    a. list/array
+    b. Each data value contains info about what is there
+2. Drawing/Printing mechanism(s)
+    a. loop that loops through list/array of "pixels"
+    b. for each pixel, check if player is in the location
+3. Reading mechanism(s)
+    a. reads important info to decide what to do...
+4. writing mechanism
+    a. ...overwriting the current list/array based on #3.
+    b. includes: overwriting.
+5. Actual Game mechanism(s)
+    a. taking input from user, used to decide how to change player pos info...
+    b. ...using the reading and writing mechanisms to do the correct thing.
+-- Idea for pixel list/array:
+    - make a default list/array
+    - each move, change some info in a list containing info about the player, then overwriting a list/array of the
+        environment with the default and  then overwriting where needed based on character pos info.
+-- Variables:
+    a. defaultBoard
+    b. currentBoard
+    c. playerPosInfo
+    d. playerInput (for movement (in "Actual Game mechanism(s)))
+
+Tests:
+1. Working list/array printer
+2. Working (simple) overwriting mechanism
+
+AltCodes:
+╔ - 201
+╚ - 200
+╗ - 187
+╝ - 188
+║ - 186
+═ - 205
+█ - 219
+▄ - 220
+▌ - 221
+▐ - 222
+▀ - 223
+▓ - 178
+▒ - 177
+░ - 176

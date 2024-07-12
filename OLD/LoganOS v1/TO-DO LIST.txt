@@ -1,0 +1,28 @@
+Items:
+	Folders
+	Simple .txt files?
+	Ready-To-Go programs? (i.e. shortcuts)
+	Also Ready-To-Go images
+
+To-Do:
+	1. Get close to done with this document
+	2. layout the main window, with menus
+		a. main window -> menu -> {add -> File; Image; Program; (.txt file?)}
+				{Reset -> tkinter.messagebox.askquestion("Reset", "Are you sure?")}
+				{exit -> tkinter.messagebox.askquestion("Reset", "Are you sure?"): .quit()}
+		b. canvases functions... lambdas?
+		c. (behind-the-scenes): value(s) storing last-used row and column number, used for grid(ing) canvases storing images
+		d. all [canvases] have to be double-clicked [para] do [action]
+	3. layout the secondary, folder, windows, with menus
+		a. folder window -> menu -> {add -> File; Image; Program; (.txt file?)}
+				{Delete Folder -> tkinter.messagebox.askquestion("Delete", "Are you sure?")
+		b. canvases functions... lambdas?
+		d. (behind-the-scenes): value(s) storing last-used row and column number, used for grid(ing) canvases storing image
+		d. all [canvases] have to be double-clicked [para] do [action]
+	4. Test, repeat
+	5. Create possible recycling bin?
+	6. Create a "RRREEEAAADDD---MMMEEE!!!!!!!!!" file
+
+Ready-To-Go programs:
+	1. FINISHED UNIT CONVERTER PROGRAM
+	2. uh...

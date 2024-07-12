@@ -1,0 +1,12 @@
+    # Print answer section
+    answer_string = "█           Your answer is: " + str(answer) + " degrees " + h + "           █"
+    answer_string_len = len(answer_string)
+    print(square * answer_string_len)
+    time.sleep(.2)
+    print(answer_string)
+    time.sleep(.2)
+    print(square * answer_string_len)
+    time.sleep(1)
+    for _ in range(3):
+        print("")
+    time.sleep(.2)

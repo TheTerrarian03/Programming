@@ -1,0 +1,42 @@
+\n = goto next line
+r[\...] = raw string
+computers start counting at 0, and to get least character of a string, do 'Variable name'[-1]
+space counts as a character in counting lengt (len)
+to change a value in a string: {variable}[position] = number/word you want
+{variable}.append = add to end of list
+How to slice: {variable}[#:#]
+reset to empty in a list: {variable}[#:#] = []
+empty a list completely: {variable}[:] = []
+range: (#, #, #) = start, end, increment
+comments: start each line with " # " or a chunk with " ''' "
+break = used to break a loop
+continue = go past whatever is next
+def name(extra_info)
+only variables created inside a function, can be accessed by that function. Otherwise, any variable 	created outside can be used by any function.
+*args = to make a flexibe amount of variables.
+Unpack an argument list: *argument_list
+words and definition / leys and values : k = key, and v value
+variable.items???
+import module
+variable.open(name, "w"), w for write and create.
+variable.write = write to the variable
+variable.close = free up memory
+variable.open(name, "r"), r for read, nothing else.
+to connect to internet: response = request.urlopen(url)
+tell BeautifulSoup to get all titles on ebay: for link in soup.findAll("a", {"class": "s-item__title"}):
+syntax error = typo -=-=-=-=- exception = user was idiot.
+
+
+
+
+# this is a simple calculator, cycling through teh numbers in add_numbers
+
+def add_numbers(*args):
+    total = 0
+    for a in args:
+        total += a
+    print(total)
+
+
+add_numbers()
+# need to add a number there
