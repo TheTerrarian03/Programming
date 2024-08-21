@@ -1,26 +1,8 @@
-use std::error::Error;
 
-use serde::Deserialize;
 use colour::{dark_green, yellow};
-
-#[derive(Deserialize, Debug)]
-struct Articles {
-    articles: Vec<Article>
-}
-
-#[derive(Deserialize, Debug)]
-struct Article {
-    title: String,
-    url: String
-}
-
-fn get_articles(url: &str) -> Result<Articles, Box<dyn Error>> {
-    let response = ureq::get(url).call()?.into_string()?;
-
-    let articles: Articles = serde_json::from_str(&response)?;  // pass in reference to response variable
-
-    Ok(articles)
-}
+use std::error::Error;
+use dotenv::dotenv;
+use newsapi::{get_articles, Articles};
 
 fn render_articles(articles: &Articles) {
     for i in &articles.articles {
@@ -29,9 +11,25 @@ fn render_articles(articles: &Articles) {
     }
 }
 
-fn main() {
-    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=b9c520f571c04951974bbc32fe38462a";
-    let articles = get_articles(url).unwrap();
+fn main() -> Result<(), Box<dyn Error>> {
+    dotenv()?;
+
+    let api_key: String = std::env::var("API_KEY")?;
+
+    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
+    let url = format!("{}{}", url, api_key);
+
+    let articles = get_articles(&url)?;
 
     render_articles(&articles);
+
+    println!("Press enter to end program...");
+
+    let mut buffer = String::new();
+
+    std::io::stdin()
+        .read_line(&mut buffer)
+        .expect("Failed to read line");
+
+    Ok(())
 }
