@@ -1,0 +1,31 @@
+Specific Windows
+- title window
+- graph overview
+    - columns holding each account you have set up
+    - totals at bottom of column
+    - graph has color matched lines and totals with the accounts
+- preferences
+    - 
+toolbar
+    - file
+        - new file
+        - open file
+        - close file
+    - 
+
+
+terminal version
+- overview
+    - summary for each account
+    - input number or name to select an account to manage
+        - enter the [row number] or [name of account] to manage account or type `new` to make a new one!
+- account manage
+    - input for selecting option:
+        - 
+        - `add`
+            - `add wihdraw`
+            - `add deposit`
+        - `remove`
+            - "select a row number, use `next` or `back` to change pages, or use `done` to quit removing
+        - `clear`
+            - ARE YOU SURE?
