@@ -1,1 +1,0 @@
-/Users/lsm03/Desktop/Programming/RustPrograms/clinews/target/debug/clinews: /Users/lsm03/Desktop/Programming/RustPrograms/clinews/newsapi/src/lib.rs /Users/lsm03/Desktop/Programming/RustPrograms/clinews/src/main.rs

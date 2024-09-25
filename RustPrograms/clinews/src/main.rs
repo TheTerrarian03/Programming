@@ -2,12 +2,12 @@
 use colour::{dark_green, yellow};
 use std::error::Error;
 use dotenv::dotenv;
-use newsapi::{get_articles, Articles};
+use newsapi::*;
 
-fn render_articles(articles: &Articles) {
-    for i in &articles.articles {
-        dark_green!("> {}\n", i.title);
-        yellow!("- {}\n\n", i.url);
+fn render_articles(articles: &Vec<Article>) {
+    for i in articles {
+        dark_green!("> {}\n", i.title());
+        yellow!("- {}\n\n", i.url());
     }
 }
 
@@ -16,20 +16,12 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let api_key: String = std::env::var("API_KEY")?;
 
-    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
-    let url = format!("{}{}", url, api_key);
+    let mut newsapi = NewsAPI::new(&api_key);
+    newsapi.endpoint(Endpoint::TopHeadlines).country(Country::Us);
 
-    let articles = get_articles(&url)?;
+    let newsapi_response = newsapi.fetch()?;
 
-    render_articles(&articles);
-
-    println!("Press enter to end program...");
-
-    let mut buffer = String::new();
-
-    std::io::stdin()
-        .read_line(&mut buffer)
-        .expect("Failed to read line");
+    render_articles(newsapi_response.articles());
 
     Ok(())
 }

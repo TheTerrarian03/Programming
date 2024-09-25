@@ -6,39 +6,35 @@
 	             and displays the average to the screen
 */
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>  // printf(), scanf()
+#include "ComputeGPA.h";
 
 int main() {
-	// decalare variables
-	int score1 = 0, score2 = 0, score3 = 0;
+	double gp1 = 0, gp2 = 0, gp3 = 0, gpa = 0, weighted_gp = 0;
+	int credits1 = 0, credits2 = 0, credits3 = 0, sum_credits = 0;
 
-	// 1. prompt the suer for exam score 1
-	printf("Please enter exam score 1: ");
+	// get grade point & credits for class 1
+	gp1 = get_grade_point(1);
+	credits1 = get_credits(1);
 
-	// 2. get the score for exam 1 from the user
-	scanf("%d", &score1);
+	// get grade point & credits for class 2
+	gp2 = get_grade_point(2);
+	credits2 = get_credits(2);
 
-	// 3. prompt the user for exam score 2
-	printf("Please enter exam score 2: ");
+	// get grade point & credits for class 3
+	gp3 = get_grade_point(3);
+	credits3 = get_credits(3);
 
-	// 4. get the score for exam 2 from the user
-	scanf("%d", &score2);
+	printf("\n%lf %lf %lf", gp1, gp2, gp3);
+	printf("\n%d %d %d", credits1, credits2, credits3);
 
-	// 5. prompt the user for exam score 3
-	printf("Please enter exam score 3: ");
+	//sum credits for each class
 
-	// 6. get the score for exam 3 from the user
-	scanf("%d", &score3);
+	sum_credits = compute_sum_credits(credits1, credits2, credits3);
+	weighted_gp = ((gp1 * credits1) + (gp2 * credits2) + (gp3 * credits3)) / 3;
 
-	// 7. sum up the scores
-	int total = score1 + score2 + score3;
+	gpa = compute_gpa(weighted_gp, sum_credits);
 
-	// 8. average the scores
-	int average = total / 3;
-
-	// 9. output average
-	printf("Here is your average: %d", average);
+	printf("\n\nYour weighted gpa is: %lf", gpa);
 	
 	return 0;
 }
