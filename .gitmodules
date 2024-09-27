@@ -47,3 +47,6 @@
 [submodule "Robotics/CircuitLib"]
 	path = Robotics/CircuitLib
 	url = https://github.com/FIRST4513/CircuitLib.git
+[submodule "College/CompSciCode"]
+	path = College/CompSciCode
+	url = https://github.com/TheTerrarian03/CompSciCode.git
